@@ -49,6 +49,10 @@ Bridge runs with the operating-system user's existing access. It is **not a sand
 
 The public website has no connection to the founder's computer or your computer. The private owner deployment is not offered as a shared customer endpoint.
 
+## Privacy
+
+The local agent sends nothing to Ganado. It has no telemetry, no account, no licence check and no network calls of its own. File contents, images, paths and command output that your AI assistant requests are sent to that assistant through the connection you configured, and only then. Metadata-only audit records (tool name, result, timing; never contents, commands or credentials) are kept locally under `~/.local/state/ganado-bridge-agent` and can be deleted at any time. The website's privacy notice, including what the early-access form and the purchase flow store, is at https://ganado-bridge.vercel.app/privacy. Questions: info@ganado.cz.
+
 ## Feedback that helps
 
 Open a workflow request describing the task you repeat, the step where your current AI setup fails and what a useful verified result would look like. After trying the bundle, optionally use the first-task report form; download counts and automated selftests are not counted as verified customer activations. Please do not include credentials, private documents or unredacted command logs. For a security concern, email info@ganado.cz instead of opening a public issue.
