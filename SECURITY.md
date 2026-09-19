@@ -4,4 +4,4 @@ Email info@ganado.cz with the subject “Bridge security report”. Include the 
 
 There is no paid bounty or guaranteed response time. Current model: https://ganado-bridge.vercel.app/security
 
-The public website does not expose an MCP command endpoint. The private local agent is not a sandbox and is not distributed from this repository.
+The public website does not expose an MCP command endpoint. The local evaluation agent is not a sandbox. Versioned bundles are distributed through this repository’s Releases with an explicit licence, SHA-256 and opt-in local-access setting.

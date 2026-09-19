@@ -21,3 +21,7 @@ Only after delivery and entitlement provisioning, account isolation, checkout/ca
 ## Directory distribution
 
 Prepared listing information and review scenarios do not mean submission or approval. The customer MCP connection needs a provider-supported public distribution path and an isolated reviewer account before submission.
+
+## Update: local distribution available
+
+The 0.1.0-preview.2 local bundle and evaluation licence are public, and archive-level first-task checks passed on a separate macOS runner. The next activation gate is the real desktop-client UI and one independent person finishing a useful task without assistance. Hosted multi-account connectivity and the OpenAI directory remain separate work.

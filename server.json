@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.cynarax/bridge-by-ganado",
   "title": "Ganado Bridge",
-  "description": "macOS local file and terminal tools: checked edits, bounded search, actual process results. Free preview.",
+  "description": "Local Mac file and terminal tools: checked edits, bounded search and real exit codes. Free preview.",
   "version": "0.1.0-preview.2",
   "repository": {
     "url": "https://github.com/cynarax/bridge-by-ganado",

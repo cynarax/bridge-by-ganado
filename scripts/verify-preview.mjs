@@ -10,6 +10,7 @@ const exec=promisify(execFile);
 const archive=path.resolve(process.argv[2]||'');
 const metadata=JSON.parse(await fs.readFile(path.resolve(process.argv[3]||'server.json'),'utf8'));
 assert.equal(metadata.name,'io.github.cynarax/bridge-by-ganado');
+assert.ok(typeof metadata.description==='string' && metadata.description.length<=100,'registry description must not exceed 100 characters');
 assert.equal(metadata.packages.length,1);assert.equal(metadata.packages[0].registryType,'mcpb');
 const digest=createHash('sha256').update(await fs.readFile(archive)).digest('hex');assert.equal(digest,metadata.packages[0].fileSha256,'bundle SHA-256 differs from published metadata');
 const {stdout:names}=await exec('unzip',['-Z1',archive],{maxBuffer:4_000_000});

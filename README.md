@@ -6,7 +6,7 @@
 
 A working connection between your AI workflow and your own computer: real files, checked edits, command sessions and results you can inspect. macOS first.
 
-[Request early access](https://ganado-bridge.vercel.app/?utm_source=github) · [Documentation](https://ganado-bridge.vercel.app/docs) · [Security](https://ganado-bridge.vercel.app/security) · [Release status](https://ganado-bridge.vercel.app/changelog)
+[Try the local preview](https://ganado-bridge.vercel.app/install?utm_source=github) · [Documentation](https://ganado-bridge.vercel.app/docs) · [Security](https://ganado-bridge.vercel.app/security) · [Release status](https://ganado-bridge.vercel.app/changelog)
 
 ## Why we are building it
 
@@ -15,14 +15,14 @@ Copying terminal output between a computer and an AI assistant is not the intere
 ## What exists today
 
 - A public product website and free early-access list.
-- A private local agent evaluation build: 13 MCP tools, checked file operations, process polling and explicit SSH configuration.
-- Automated local tests and a real synthetic MCP round trip.
+- A downloadable free local evaluation bundle: 13 MCP tools, bundled dependencies, checked file operations, process polling, built-in bounded search and explicit opt-in local access.
+- 22 local agent tests plus real distributed-archive MCP acceptance on separate macOS and Ubuntu runners. The tests do not certify every desktop-client UI or represent a customer activation.
 
-This repository is the **public product documentation and feedback hub**, not the agent source or a public installable release. The local evaluation build is not currently distributed here.
+This repository is the **public documentation, release and feedback hub**. The maintained product source remains private. Download the exact [0.1.0-preview.2 bundle](https://github.com/cynarax/bridge-by-ganado/releases/tag/v0.1.0-preview.2), verify its [SHA-256](SHA256SUMS), and read [INSTALL.md](INSTALL.md) and [EVALUATION.md](EVALUATION.md) before enabling access. No signup or payment is required for the local evaluation.
 
 ## What is not shipping yet
 
-A generally available self-serve customer connection, paid plan and public ChatGPT directory listing. €19/month is a target price, not an active offer. No payment is taken when joining the list. Windows and Linux are interest-list options, not supported release claims.
+A managed hosted customer connection, paid plan and public ChatGPT directory listing. The local evaluation is a separate delivery path. €19/month is a target price, not an active offer. No payment is taken when joining the list. Windows and Linux are interest-list options, not supported release claims.
 
 ## A useful task has evidence
 
@@ -43,6 +43,6 @@ The public website has no connection to the founder's computer or your computer.
 
 ## Feedback that helps
 
-Open a workflow request describing the task you repeat, the step where your current AI setup fails and what a useful verified result would look like. Please do not include credentials, private documents or unredacted command logs. For a security concern, email info@ganado.cz instead of opening a public issue.
+Open a workflow request describing the task you repeat, the step where your current AI setup fails and what a useful verified result would look like. After trying the bundle, optionally use the first-task report form; download counts and automated selftests are not counted as verified customer activations. Please do not include credentials, private documents or unredacted command logs. For a security concern, email info@ganado.cz instead of opening a public issue.
 
 Built by Ganado International s.r.o., Czech Republic. Independent of OpenAI; no endorsement or directory approval claimed.
