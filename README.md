@@ -26,6 +26,12 @@ This repository is the **public documentation, release and feedback hub**. The m
 
 A managed hosted customer connection, paid plan and public ChatGPT directory listing. The local evaluation is a separate delivery path. €19/month is a target price, not an active offer. No payment is taken when joining the list. Windows and Linux are interest-list options, not supported release claims.
 
+## Practical guides
+
+New: [Cursor local MCP setup on Mac](https://ganado-bridge.vercel.app/guides/cursor-local-files-mcp-mac?utm_source=github), [disconnected-server troubleshooting](https://ganado-bridge.vercel.app/guides/mcp-server-disconnected-macos?utm_source=github), and [local vs remote MCP](https://ganado-bridge.vercel.app/guides/local-vs-remote-mcp?utm_source=github). See [GUIDES.md](GUIDES.md) for the specific problem each guide addresses.
+
+The proposed **EUR 29 one-time local commercial licence** is separate from the future managed subscription. It grants commercial-use rights to the same local tools; it does not add a remote relay. Check [current purchase availability and licence terms](https://ganado-bridge.vercel.app/licence?utm_source=github) before assuming sales are open. The free evaluation remains available without signup.
+
 ## A useful task has evidence
 
 | Step | What should happen |
