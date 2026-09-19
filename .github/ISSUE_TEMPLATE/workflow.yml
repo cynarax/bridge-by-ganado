@@ -1,0 +1,36 @@
+name: Workflow request
+description: Describe a concrete AI-to-machine task you need to finish.
+title: "Workflow: "
+body:
+  - type: markdown
+    attributes:
+      value: "Do not paste credentials, private files, customer data or unredacted terminal output. This is a public product-feedback repository, not an active paid support channel."
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Operating system
+      options:
+        - macOS
+        - Windows (interest only)
+        - Linux (interest only)
+    validations:
+      required: true
+  - type: textarea
+    id: task
+    attributes:
+      label: What recurring task do you need to finish?
+      placeholder: "Example: read a local config, make one change, and run its validation."
+    validations:
+      required: true
+  - type: textarea
+    id: failure
+    attributes:
+      label: Where does your current setup get in the way?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: What would a useful verified result look like?
+    validations:
+      required: true

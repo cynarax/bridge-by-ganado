@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Early-access request
+    url: https://ganado-bridge.vercel.app/?utm_source=github
+    about: Join the free macOS-first interest list. No payment is taken.
+  - name: Security concern
+    url: https://ganado-bridge.vercel.app/support
+    about: Contact us privately with a redacted reproduction.
