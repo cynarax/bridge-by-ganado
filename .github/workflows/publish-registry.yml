@@ -1,0 +1,31 @@
+name: Publish verified preview to MCP Registry
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main' && github.repository == 'cynarax/bridge-by-ganado'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - name: Require public artifact and recheck its actual contents
+        run: |
+          curl --fail --silent --show-error --location --max-time 60 'https://github.com/cynarax/bridge-by-ganado/releases/download/v0.1.0-preview.2/ganado-bridge-0.1.0-preview.2.mcpb' --output "$RUNNER_TEMP/bridge-preview.mcpb"
+          node scripts/verify-preview.mjs "$RUNNER_TEMP/bridge-preview.mcpb" server.json
+      - name: Install pinned official publisher with verified digest
+        run: |
+          curl --fail --silent --show-error --location --max-time 60 'https://github.com/modelcontextprotocol/registry/releases/download/v1.8.1/mcp-publisher_linux_amd64.tar.gz' --output "$RUNNER_TEMP/mcp-publisher.tar.gz"
+          echo 'a06c9096dcb9727c13555b6be26c7effa707b01f06a4c561ba7a3635443cf2cc  '"$RUNNER_TEMP/mcp-publisher.tar.gz" | sha256sum --check --strict
+          tar -xzf "$RUNNER_TEMP/mcp-publisher.tar.gz" -C "$RUNNER_TEMP" mcp-publisher
+      - name: Authenticate using this repository's GitHub workload identity
+        run: '"$RUNNER_TEMP/mcp-publisher" login github-oidc'
+      - name: Publish the exact server metadata
+        run: '"$RUNNER_TEMP/mcp-publisher" publish'

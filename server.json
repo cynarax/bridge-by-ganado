@@ -1,0 +1,22 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.cynarax/bridge-by-ganado",
+  "title": "Ganado Bridge",
+  "description": "macOS local file and terminal tools: checked edits, bounded search, actual process results. Free preview.",
+  "version": "0.1.0-preview.2",
+  "repository": {
+    "url": "https://github.com/cynarax/bridge-by-ganado",
+    "source": "github"
+  },
+  "websiteUrl": "https://ganado-bridge.vercel.app",
+  "packages": [
+    {
+      "registryType": "mcpb",
+      "identifier": "https://github.com/cynarax/bridge-by-ganado/releases/download/v0.1.0-preview.2/ganado-bridge-0.1.0-preview.2.mcpb",
+      "fileSha256": "ef85f8ad3f55fa6d9110e3db2d500a05dedfed62a18fcfdd572f840c7037ae16",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+name: First-task result
+description: Voluntarily share whether the local preview completed a disposable first task.
+title: "First task: "
+labels: [activation-report]
+body:
+  - type: markdown
+    attributes:
+      value: "This is public and optional. Do not include your hostname, local paths, emails, credentials, private data or raw logs. An automated selftest is not the same as a completed task in your AI client."
+  - type: input
+    id: version
+    attributes:
+      label: Bridge version
+      placeholder: '0.1.0-preview.2'
+    validations:
+      required: true
+  - type: dropdown
+    id: result
+    attributes:
+      label: What actually completed?
+      options:
+        - Download only
+        - Automated local selftest only
+        - AI-client connection succeeded but first task failed
+        - AI client completed read, checked edit and command verification
+        - Removal failed
+    validations:
+      required: true
+  - type: input
+    id: host
+    attributes:
+      label: AI client and macOS version (no hostname)
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Redacted result or first failed step
+      placeholder: "Describe the step and actual exit result. Do not paste raw logs or private file contents."
+    validations:
+      required: true
