@@ -8,6 +8,8 @@ A working connection between your AI workflow and your own computer: real files,
 
 [Try the local preview](https://ganado-bridge.vercel.app/install?utm_source=github) · [Documentation](https://ganado-bridge.vercel.app/docs) · [Security](https://ganado-bridge.vercel.app/security) · [Release status](https://ganado-bridge.vercel.app/changelog)
 
+Local package metadata is now [active in the MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.cynarax%2Fbridge-by-ganado/versions/0.1.0-preview.2). This is separate from the ChatGPT and desktop-extension directories; neither marketplace approval is claimed.
+
 ## Why we are building it
 
 Copying terminal output between a computer and an AI assistant is not the interesting part of a task. Bridge gives the assistant tools to read the current file, compare its hash before changing it, run a command once and inspect its actual exit code.
