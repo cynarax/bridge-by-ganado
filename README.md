@@ -20,7 +20,7 @@ Copying terminal output between a computer and an AI assistant is not the intere
 - A downloadable free local evaluation bundle: 13 MCP tools, bundled dependencies, checked file operations, process polling, built-in bounded search and explicit opt-in local access.
 - 22 local agent tests plus real distributed-archive MCP acceptance on separate macOS and Ubuntu runners. The tests do not certify every desktop-client UI or represent a customer activation.
 
-This repository is the **public documentation, release and feedback hub**. The maintained product source remains private. Download the exact [0.1.0-preview.2 bundle](https://github.com/cynarax/bridge-by-ganado/releases/tag/v0.1.0-preview.2), verify its [SHA-256](SHA256SUMS), and read [INSTALL.md](INSTALL.md) and [EVALUATION.md](EVALUATION.md) before enabling access. No signup or payment is required for the local evaluation.
+This repository holds the **agent source (`agent/`, MIT licence since 20 September 2026), the documentation, releases and feedback hub**. Download the exact [0.1.0-preview.2 bundle](https://github.com/cynarax/bridge-by-ganado/releases/tag/v0.1.0-preview.2), verify its [SHA-256](SHA256SUMS), and read [INSTALL.md](INSTALL.md) and [EVALUATION.md](EVALUATION.md) before enabling access. No signup or payment is required for the local evaluation.
 
 ## What is not shipping yet
 
@@ -30,7 +30,7 @@ A managed hosted customer connection, paid plan and public ChatGPT directory lis
 
 New: [Cursor local MCP setup on Mac](https://ganado-bridge.vercel.app/guides/cursor-local-files-mcp-mac?utm_source=github), [disconnected-server troubleshooting](https://ganado-bridge.vercel.app/guides/mcp-server-disconnected-macos?utm_source=github), and [local vs remote MCP](https://ganado-bridge.vercel.app/guides/local-vs-remote-mcp?utm_source=github). See [GUIDES.md](GUIDES.md) for the specific problem each guide addresses.
 
-The proposed **EUR 29 one-time local commercial licence** is separate from the future managed subscription. It grants commercial-use rights to the same local tools; it does not add a remote relay. Check [current purchase availability and licence terms](https://ganado-bridge.vercel.app/licence?utm_source=github) before assuming sales are open. The free evaluation remains available without signup.
+The code is MIT, so commercial use needs no purchase. The earlier EUR 29 one-time "commercial licence" is being reworked into something that adds value beyond the code (checkout is paused meanwhile); see [the licence page](https://ganado-bridge.vercel.app/licence?utm_source=github) for the current state. The future managed connection remains an interest list.
 
 ## A useful task has evidence
 
