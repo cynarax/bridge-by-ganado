@@ -10,7 +10,7 @@ The Ganado Bridge local agent (the `agent/` directory of this repository and the
 
 Use only computers, data and accounts you own or are authorized to operate. The agent executes with your OS user's permissions. It is not a sandbox; commands can change or delete data or access the network. Requested tool responses are sent to your AI provider through the connection you configured. Review permissions, avoid sensitive production data and keep backups.
 
-This is experimental, pre-release software supplied as is, with no promised support level, uninterrupted service or suitability for a particular purpose, to the extent permitted by law. There is no time-bomb, remote-disabling mechanism, telemetry, licence-server call, automatic update, hosted relay or payment collection in this build. You stop using it by removing the connection and the software. Ganado is not affiliated with or endorsed by your AI provider.
+This is experimental, pre-release software supplied as is, with no promised support level, uninterrupted service or suitability for a particular purpose, to the extent permitted by law. There is no time-bomb, remote-disabling mechanism, telemetry, licence-server call, automatic update or payment collection in this build. The 0.2 preview includes an optional outbound client for Ganado’s managed relay work; using `connect` intentionally contacts the configured Ganado Bridge HTTPS relay and stores a local device identity. The public ChatGPT listing and managed service are not approved or generally released. You stop local-only use by removing the connection and software; for a paired relay device, use `disconnect` so remote revocation is confirmed first. Ganado is not affiliated with or endorsed by your AI provider.
 
 ## First task
 

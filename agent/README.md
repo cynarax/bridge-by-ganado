@@ -1,6 +1,6 @@
 # Ganado Bridge — free local evaluation preview
 
-13 MCP tools for checked file edits, bounded reads/search and persistent command polling. macOS first. No hosted relay or public ChatGPT connection is included. Read EVALUATION.md before use.
+13 MCP tools for checked file edits, bounded reads/search and persistent command polling. macOS first. This 0.2 preview branch also contains an outbound managed-relay client for the Ganado Bridge public-connector work; the ChatGPT listing is not approved or generally released. Read EVALUATION.md before use.
 
 ## Install a desktop bundle
 
@@ -19,6 +19,19 @@ node bin/bridge.mjs config
 ```
 
 The config command prints a stdio connection using your own machine's paths. Review it before adding it to a compatible client. It does not write client settings or enable a service. Starting stdio directly requires serve --allow-local-access. The files-and-process selftest uses disposable fixtures; a passing result is not a customer activation or AI-provider endorsement.
+
+## Managed relay preview client
+
+The 0.2 preview adds two local commands for the future public connector:
+
+```sh
+ganado-bridge connect
+ganado-bridge disconnect
+```
+
+`connect` creates or reuses a local X25519 device identity, registers only its public key with the configured Ganado Bridge relay, prints a short-lived pairing code, and keeps an outbound HTTPS poll running while it serves the same local MCP tools. The device token and private key stay in the local Bridge state file with restrictive permissions. Tool arguments/results are encrypted before short-lived queue persistence; the live relay process still receives MCP requests from the AI client and routing metadata remains visible to the service.
+
+`disconnect` revokes the device remotely before deleting its local relay identity. If remote revocation cannot be confirmed, the local identity is deliberately kept so revocation can be retried. There is no inbound Mac listener. This client code being present does not mean the hosted endpoint or ChatGPT directory entry is approved.
 
 ## What access means
 

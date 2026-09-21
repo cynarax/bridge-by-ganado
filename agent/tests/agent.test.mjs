@@ -9,7 +9,7 @@ import {Processes} from '../src/processes.mjs';
 const exec=promisify(execFile);
 const cli=path.resolve(import.meta.dirname,'../bin/bridge.mjs');
 const run=(args,options={})=>exec(process.execPath,[cli,...args],{timeout:20000,maxBuffer:65536,...options});
-test('version is a preview, not a general availability claim',async()=>assert.match((await run(['version'])).stdout,/0\.1\.0-preview\.2/));
+test('version is a preview, not a general availability claim',async()=>assert.match((await run(['version'])).stdout,/0\.2\.0-preview\.0/));
 test('help does not enable a connection',async()=>assert.match((await run([])).stdout,/free local evaluation/));
 test('local-access flag is required before tools can be served',async()=>{await assert.rejects(run(['serve']),error=>error.code===1&&error.stderr.includes('--allow-local-access'));});
 test('unknown command fails instead of starting an agent',async()=>{await assert.rejects(run(['oops']),error=>error.code===1);});

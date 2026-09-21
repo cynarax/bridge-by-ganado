@@ -1,9 +1,9 @@
 {
   "name": "@ganado/bridge-agent",
-  "version": "0.1.0-preview.2",
+  "version": "0.2.0-preview.0",
   "private": true,
   "type": "module",
-  "description": "Local MCP file and process tools. Free evaluation preview; no hosted connection.",
+  "description": "Local MCP file/process tools with an outbound managed-relay preview client.",
   "license": "MIT",
   "engines": {
     "node": "^22.22.0 || ^24.0.0"

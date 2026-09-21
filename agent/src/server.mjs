@@ -14,7 +14,7 @@ const write = { readOnlyHint: false, destructiveHint: true, idempotentHint: fals
 const execute = { ...write, openWorldHint: true };
 
 export function createBridge({ processes = new Processes(), audit = async () => {} } = {}) {
-  const server = new McpServer({ name: 'ganado-bridge-agent', version: '0.1.0-preview.2' });
+  const server = new McpServer({ name: 'ganado-bridge-agent', version: '0.2.0-preview.0' });
   function tool(name, description, inputSchema, annotations, fn) {
     server.registerTool(name, { description, inputSchema, annotations }, async (input) => {
       const started = Date.now();

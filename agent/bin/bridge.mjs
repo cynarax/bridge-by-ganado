@@ -7,7 +7,7 @@ import {execFile} from 'node:child_process';
 import {promisify} from 'node:util';
 import assert from 'node:assert/strict';
 const exec=promisify(execFile);
-const version='0.1.0-preview.2';
+const version='0.2.0-preview.0';
 const here=fileURLToPath(import.meta.url);
 const command=process.argv[2]||'help';
 const output=data=>process.stdout.write(JSON.stringify(data,null,2)+'\n');
@@ -48,8 +48,10 @@ try{
  if(command==='doctor'){const report=await doctor();output(report);if(!report.ready)process.exitCode=1;}
  else if(command==='selftest')output(await selftest());
  else if(command==='config')output({mcpServers:{'ganado-bridge':{command:process.execPath,args:[here,'serve','--allow-local-access']}}});
+ else if(command==='connect'){const {connectRelay}=await import('../src/relay-client.mjs');await connectRelay();}
+ else if(command==='disconnect'){const {disconnectRelay}=await import('../src/relay-client.mjs');const r=await disconnectRelay();output(r);}
  else if(command==='serve'){const {serve}=await import('../src/main.mjs');await serve();}
  else if(command==='--version'||command==='version')process.stdout.write('Ganado Bridge '+version+'\n');
- else if(command==='help'||command==='--help')process.stdout.write('Ganado Bridge — free local evaluation preview\n\nCommands: doctor, selftest, config, serve --allow-local-access, version\n\n13 MCP tools for owner-authorized file and terminal work.\nNo public connection, default SSH target, paid subscription or startup service.\nRead README.md and the security model before enabling local access.\n');
+ else if(command==='help'||command==='--help')process.stdout.write('Ganado Bridge — free local evaluation preview\n\nCommands: connect, disconnect, doctor, selftest, config, serve --allow-local-access, version\n\n13 MCP tools for owner-authorized file and terminal work.\nManaged relay client included; public ChatGPT listing is not yet approved. No default SSH target, paid subscription or startup service.\nRead README.md and the security model before enabling local access.\n');
  else throw new Error('Unknown command. Run with --help.');
 }catch(error){process.stderr.write('Bridge: '+String(error.message).slice(0,400)+'\n');process.exitCode=1;}

@@ -1,13 +1,13 @@
 {
   "name": "@ganado/bridge-agent",
-  "version": "0.1.0-preview.2",
+  "version": "0.2.0-preview.0",
   "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "": {
       "name": "@ganado/bridge-agent",
-      "version": "0.1.0-preview.2",
-      "license": "SEE LICENSE IN EVALUATION.md",
+      "version": "0.2.0-preview.0",
+      "license": "MIT",
       "dependencies": {
         "@modelcontextprotocol/sdk": "1.30.0",
         "zod": "4.6.5"
