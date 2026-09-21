@@ -20,6 +20,11 @@ node bin/bridge.mjs config
 
 The config command prints a stdio connection using your own machine's paths. Review it before adding it to a compatible client. It does not write client settings or enable a service. Starting stdio directly requires serve --allow-local-access. The files-and-process selftest uses disposable fixtures; a passing result is not a customer activation or AI-provider endorsement.
 
+
+## Managed relay reviewer path
+
+For the 0.2 preview, extract the versioned MCPB into a temporary folder and run `node bin/bridge.mjs connect`. It prints a short-lived pairing code and keeps an outbound HTTPS poll running. Pair that code only in the Ganado Bridge authorization flow for `https://ganado-bridge.vercel.app/mcp`. Use `node bin/bridge.mjs disconnect` to revoke the paired device before deleting local state. See `REVIEWER.md` in the repository for the disposable review checklist. The public ChatGPT listing is not approved.
+
 ## What access means
 
 This is not a sandbox. Shell tools run as your OS user and can modify/delete data and access the network. Read-only annotations apply only to particular tools, not to the entire process. File contents, images, paths and command output requested by your AI assistant are sent to that assistant through your chosen connection.

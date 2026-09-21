@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.0-preview.0 — managed relay technical preview
+
+- Adds opt-in `connect` / `disconnect` commands for the outbound HTTPS managed relay.
+- Adds local X25519 device identity and encrypted request/result envelopes for short-lived relay queue persistence.
+- Keeps the existing 13-tool local MCP mode and explicit local-access consent.
+- Does not claim ChatGPT directory approval, a generally available managed service, or independent-user activation.
+- Reviewer path: `REVIEWER.md`.
+
 ## 0.1 — early-access website, 19 September 2026
 
 Published the Ganado Bridge brand and English website, interactive illustrative workflows, macOS-first early-access form, documentation, security/privacy/terms pages and two practical guides.

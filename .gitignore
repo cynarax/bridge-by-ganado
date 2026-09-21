@@ -2,3 +2,5 @@
 .mcpregistry*
 *.mcpb
 node_modules/
+
+dist/

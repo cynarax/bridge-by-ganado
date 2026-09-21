@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.cynarax/bridge-by-ganado",
   "title": "Ganado Bridge",
-  "description": "Local Mac file and terminal tools: checked edits, bounded search and real exit codes. Free preview.",
-  "version": "0.1.0-preview.2",
+  "description": "Local Mac tools plus outbound pairing for the Ganado Bridge managed relay preview.",
+  "version": "0.2.0-preview.0",
   "repository": {
     "url": "https://github.com/cynarax/bridge-by-ganado",
     "source": "github"
@@ -12,8 +12,8 @@
   "packages": [
     {
       "registryType": "mcpb",
-      "identifier": "https://github.com/cynarax/bridge-by-ganado/releases/download/v0.1.0-preview.2/ganado-bridge-0.1.0-preview.2.mcpb",
-      "fileSha256": "ef85f8ad3f55fa6d9110e3db2d500a05dedfed62a18fcfdd572f840c7037ae16",
+      "identifier": "https://github.com/cynarax/bridge-by-ganado/releases/download/v0.2.0-preview.0/ganado-bridge-0.2.0-preview.0.mcpb",
+      "fileSha256": "ce45aed48044e6f926658da621bb763b6dc898ec36a81001d7654cdcd9fd0429",
       "transport": {
         "type": "stdio"
       }

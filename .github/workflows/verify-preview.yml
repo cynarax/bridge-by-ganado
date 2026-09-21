@@ -21,6 +21,6 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           mkdir -p "$RUNNER_TEMP/bridge-download"
-          gh release download v0.1.0-preview.2 --repo cynarax/bridge-by-ganado --pattern 'ganado-bridge-0.1.0-preview.2.mcpb' --dir "$RUNNER_TEMP/bridge-download"
+          gh release download v0.2.0-preview.0 --repo cynarax/bridge-by-ganado --pattern 'ganado-bridge-0.2.0-preview.0.mcpb' --dir "$RUNNER_TEMP/bridge-download"
       - name: Verify hash, consent, first task, search, process and removal
-        run: node scripts/verify-preview.mjs "$RUNNER_TEMP/bridge-download/ganado-bridge-0.1.0-preview.2.mcpb" server.json
+        run: node scripts/verify-preview.mjs "$RUNNER_TEMP/bridge-download/ganado-bridge-0.2.0-preview.0.mcpb" server.json

@@ -18,7 +18,7 @@ jobs:
           node-version: '24'
       - name: Require public artifact and recheck its actual contents
         run: |
-          curl --fail --silent --show-error --location --max-time 60 'https://github.com/cynarax/bridge-by-ganado/releases/download/v0.1.0-preview.2/ganado-bridge-0.1.0-preview.2.mcpb' --output "$RUNNER_TEMP/bridge-preview.mcpb"
+          curl --fail --silent --show-error --location --max-time 60 'https://github.com/cynarax/bridge-by-ganado/releases/download/v0.2.0-preview.0/ganado-bridge-0.2.0-preview.0.mcpb' --output "$RUNNER_TEMP/bridge-preview.mcpb"
           node scripts/verify-preview.mjs "$RUNNER_TEMP/bridge-preview.mcpb" server.json
       - name: Install pinned official publisher with verified digest
         run: |
