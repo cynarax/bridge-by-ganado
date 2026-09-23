@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "tool_count": 13,
+  "user": "node",
+  "network": "none",
+  "readonly_root": true,
+  "host_mounts": false,
+  "relay_pairing": false,
+  "scope": "Local stdio directory evaluation, not a Mac emulator or Glama assessment",
+  "image": "ganado-bridge-directory-eval:20260923"
+}

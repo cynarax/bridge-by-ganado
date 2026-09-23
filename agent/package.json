@@ -16,7 +16,8 @@
     "src",
     "README.md",
     "EVALUATION.md",
-    "npm-shrinkwrap.json"
+    "npm-shrinkwrap.json",
+    "LICENSE"
   ],
   "scripts": {
     "test": "node --test tests/*.test.mjs",

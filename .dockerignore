@@ -1,0 +1,12 @@
+**
+!Dockerfile
+!LICENSE
+!agent
+!agent/package.json
+!agent/npm-shrinkwrap.json
+!agent/README.md
+!agent/EVALUATION.md
+!agent/bin
+!agent/bin/**
+!agent/src
+!agent/src/**
