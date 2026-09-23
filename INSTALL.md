@@ -1,16 +1,46 @@
-# Ganado Bridge — free local evaluation preview
+# Set up Ganado Bridge on your Mac
 
-13 MCP tools for checked file edits, bounded reads/search and persistent command polling. macOS first. No hosted relay or public ChatGPT connection is included. Read EVALUATION.md before use.
+Current bundle: **0.2.0-preview.0**. Two supported preview routes: a local MCP client, or the hosted ChatGPT Developer Mode connection. A public ChatGPT directory listing is under review, not yet approved or published.
 
-## Install a desktop bundle
+## Before starting
 
-Download the versioned .mcpb from https://github.com/cynarax/bridge-by-ganado/releases and verify its SHA-256 against the release checksum. Open it in a desktop MCP host that supports .mcpb installation. Review the extension details, then explicitly enable the owner-level local-access setting. The default is disabled. Your host's normal tool approvals and OS permissions still apply.
+Use a Mac and files you are authorized to operate. Manual setup requires **Node 22.22+ within 22.x, or 24.x**. A compatible MCPB desktop host supplies its own supported runtime. The bundle includes dependencies; you do not need a separate npm, Homebrew or ripgrep installation for the bundle route.
 
-Dependencies are bundled. No npm install or Homebrew/ripgrep installation is required for the MCPB route. The host supplies a supported Node runtime. Current runtime range is Node 22.22+ within 22.x, or 24.x. Host UI installation is separate from the automated manifest-resolved MCP tests; see release evidence.
+Download the versioned `.mcpb` and `SHA256SUMS` from the [0.2 release](https://github.com/cynarax/bridge-by-ganado/releases/tag/v0.2.0-preview.0). In the download folder, verify:
 
-## Other local MCP clients
+```sh
+shasum -a 256 -c SHA256SUMS
+```
 
-Extract the versioned .mcpb as a ZIP into a folder you control. With a supported Node installed, run:
+Do not continue if the checksum fails. This is a ZIP-format MCP bundle, **not a notarized `.dmg` app**. Do not disable Gatekeeper or other client/OS security controls to run it. The [MIT licence](LICENSE) applies to the agent; dependencies keep their own licences.
+
+## Route A: ChatGPT → your Mac
+
+1. Extract the `.mcpb` as a ZIP into a folder you control. For example, run `unzip ganado-bridge-0.2.0-preview.0.mcpb -d ganado-bridge-preview` from its download folder.
+2. Open Terminal in the extracted folder and run:
+
+   ```sh
+   node bin/bridge.mjs doctor
+   node bin/bridge.mjs connect
+   ```
+
+3. Keep the process running. It displays a pairing code valid for 10 minutes. Creating this connection enables the agent to handle owner-authorized file and terminal requests; read [Security](SECURITY.md) first.
+4. In a ChatGPT account that permits Developer Mode, create a remote MCP connection with **OAuth** and the MCP URL:
+
+   ```text
+   https://ganado-bridge.vercel.app/mcp
+   ```
+
+5. Enter the code **only on the Ganado Bridge authorization page**, not in chat, GitHub or a support message. Review the access and confirm.
+6. Select the connection in ChatGPT and try the disposable first task below. The correct Mac must stay awake, online and running Bridge.
+
+[Current OpenAI connection documentation](https://developers.openai.com/plugins/deploy/connect-chatgpt). Account/workspace eligibility can differ; the public directory is not an alternative until our listing is approved and published.
+
+## Route B: a local desktop AI client
+
+For an MCPB-capable client, import the downloaded bundle through its normal extension UI. Review the publisher and tools. The `Enable owner-level local file and terminal access` setting starts disabled; enable it only after understanding the permission boundary. Client tool approvals and OS permissions still apply.
+
+For Cursor or another stdio client, extract the same bundle and run:
 
 ```sh
 node bin/bridge.mjs doctor
@@ -18,29 +48,36 @@ node bin/bridge.mjs selftest
 node bin/bridge.mjs config
 ```
 
-The config command prints a stdio connection using your own machine's paths. Review it before adding it to a compatible client. It does not write client settings or enable a service. Starting stdio directly requires serve --allow-local-access. The files-and-process selftest uses disposable fixtures; a passing result is not a customer activation or AI-provider endorsement.
+`config` prints settings with your own absolute file paths; review and add them to your client. It does not edit your client configuration. Direct stdio use requires `serve --allow-local-access`. [Cursor setup guide](https://ganado-bridge.vercel.app/guides/cursor-local-files-mcp-mac).
 
+## First task: create → read → checked edit → verify
 
-## Managed relay reviewer path
+```text
+Use Ganado Bridge to identify the connected device.
+Create a uniquely named folder under the operating system's temporary directory.
+Inside it create fixture.txt containing BRIDGE_BEFORE.
+Read the file, use its current SHA-256 to replace that marker with BRIDGE_AFTER,
+and read it back. Run a harmless printf command in the same folder.
+Wait for that same process session to finish and report its actual exit code.
+Do not inspect unrelated files or private data.
+```
 
-For the 0.2 preview, extract the versioned MCPB into a temporary folder and run `node bin/bridge.mjs connect`. It prints a short-lived pairing code and keeps an outbound HTTPS poll running. Pair that code only in the Ganado Bridge authorization flow for `https://ganado-bridge.vercel.app/mcp`. Use `node bin/bridge.mjs disconnect` to revoke the paired device before deleting local state. See `REVIEWER.md` in the repository for the disposable review checklist. The public ChatGPT listing is not approved.
+Inspect the changed file and result yourself. A checksum, selftest, running process or download counter is not proof that your AI client completed the task.
 
-## What access means
+## Disconnect and uninstall
 
-This is not a sandbox. Shell tools run as your OS user and can modify/delete data and access the network. Read-only annotations apply only to particular tools, not to the entire process. File contents, images, paths and command output requested by your AI assistant are sent to that assistant through your chosen connection.
+For the hosted route, stop the active connection with `Ctrl-C`, then from the extracted folder run:
 
-SSH is disabled by default. Only explicitly configured, existing authorized aliases from BRIDGE_AGENT_SSH_ALIASES may be used. The private owner operations-health module is not included.
+```sh
+node bin/bridge.mjs disconnect
+```
 
-Built-in search has entry, byte, file-size, depth and time budgets. Budget-limited results are marked incomplete. Ripgrep is optional acceleration, not an installation dependency.
+Wait for confirmed revocation before deleting local state. If it fails, keep the state so you can retry. A disconnect prevents future work; it cannot roll back a completed action or guarantee shutdown of an already-started remote process.
 
-## First task
+For local mode, remove/disable the extension in the AI client and stop its process. Remove the extracted folder when no longer needed. This preview installs no automatic startup service, LaunchAgent or global package.
 
-In your AI client, ask Bridge to confirm system_info, create a new uniquely named text fixture in a temporary folder, read it, replace exactly one marker using its current SHA-256, read it back and run a harmless print command. Inspect the actual resulting file and exit code. Do not test with client data or a production directory.
+Local metadata-only audit logs and relay identity can remain under `~/.local/state/ganado-bridge-agent`. The identity contains credentials: never attach it to a bug report. Remove state only after hosted revocation is confirmed. Command sessions and their bounded output buffers do not survive an agent restart.
 
-## Removal and data
+## When something fails
 
-Disable/remove the extension in the host and stop its host-managed process, then delete its extracted folder. No LaunchAgent, global package, automatic startup, billing or telemetry is installed. Metadata-only audit logs may remain under ~/.local/state/ganado-bridge-agent; remove them separately if not needed. Command output exists in bounded in-memory buffers and is lost on restart.
-
-You may voluntarily report a redacted first-task result through the public workflow issue on GitHub. Do not include paths, hostname, credentials, customer data or raw logs. Download counts are not activation counts.
-
-Security/privacy/terms: https://ganado-bridge.vercel.app/security · https://ganado-bridge.vercel.app/privacy · https://ganado-bridge.vercel.app/terms
+Use the [support checklist](SUPPORT.md). Do not repeatedly rerun a timed-out write or command: it may already have started. Read the current file or poll the existing process first. An unknown SSH alias is intentionally rejected; only explicitly configured authorized aliases in `BRIDGE_AGENT_SSH_ALIASES` are accepted.

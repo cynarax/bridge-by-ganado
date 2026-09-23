@@ -1,0 +1,42 @@
+name: Bug report
+description: Report a reproducible setup or tool problem without private data.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: "Security issue? Email info@ganado.cz privately. Never post pairing codes, relay.json, credentials, private paths or customer logs."
+  - type: input
+    id: version
+    attributes:
+      label: Bridge version
+      placeholder: 0.2.0-preview.0
+    validations:
+      required: true
+  - type: dropdown
+    id: route
+    attributes:
+      label: Connection route
+      options:
+        - ChatGPT Developer Mode / managed relay
+        - Local MCPB desktop extension
+        - Manual local stdio
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: macOS, Node and AI client versions
+      description: Do not include your hostname, account name or device serial number.
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps and expected result
+      description: Reproduce with disposable data and include a redacted error, not a complete private log.
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+    validations:
+      required: true

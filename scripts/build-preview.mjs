@@ -13,7 +13,7 @@ const out=path.join(root,'dist');
 const stage=path.join(out,`ganado-bridge-${version}`);
 const archive=path.join(out,`ganado-bridge-${version}.mcpb`);
 await fs.rm(stage,{recursive:true,force:true});await fs.mkdir(stage,{recursive:true});await fs.mkdir(out,{recursive:true});
-for(const name of ['bin','src','node_modules','package.json','npm-shrinkwrap.json','README.md','EVALUATION.md'])await fs.cp(path.join(agent,name),path.join(stage,name),{recursive:true,filter:src=>!['.DS_Store','.env','.npmrc'].includes(path.basename(src))});
+for(const name of ['bin','src','node_modules','package.json','npm-shrinkwrap.json','README.md','EVALUATION.md','LICENSE'])await fs.cp(path.join(agent,name),path.join(stage,name),{recursive:true,filter:src=>!['.DS_Store','.env','.npmrc'].includes(path.basename(src))});
 await fs.copyFile(path.join(root,'assets/brand-icon.png'),path.join(stage,'icon.png'));
 const manifest={manifest_version:'0.3',name:'ganado-bridge',display_name:'Ganado Bridge — Local + Relay Preview',version,
  description:'Checked local Mac tools plus an optional outbound pairing client for the Ganado Bridge managed relay.',

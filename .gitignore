@@ -4,3 +4,14 @@
 node_modules/
 
 dist/
+
+# Local state and reports must never enter the public product repository.
+.env
+.env.*
+!.env.example
+.npmrc
+.vercel/
+output/
+*.pem
+*.key
+relay.json
