@@ -41,6 +41,8 @@ The released ZIP is immutable. Current source documentation can be newer than th
 
 ## Built by a Czech company
 
+Created by **[Artem Chagin](https://reliabilitylayer.com/artem-chagin)**, co-founder and CTO of [Ganado](https://ganado.cz/en/). [Reliability Layer](https://reliabilitylayer.com) brings together the products and engineering work behind the business.
+
 **Ganado international s.r.o.** · IČO **19322119** · Příčná 1892/4, Nové Město, 110 00 Praha 1, Czechia. [Official ARES company record](https://ares.gov.cz/ekonomicke-subjekty/res/19322119) · [About the publisher](https://ganado-bridge.vercel.app/about).
 
 The company was incorporated in 2023; Bridge was first released in September 2026. The local agent source in `agent/` is MIT-licensed. The hosted relay is a separate service. We are independent of OpenAI and other AI providers; no endorsement, enterprise certification or support SLA is claimed.
@@ -50,3 +52,7 @@ The company was incorporated in 2023; Bridge was first released in September 202
 [Report a non-sensitive bug](https://github.com/cynarax/bridge-by-ganado/issues/new?template=bug.yml) or [describe a workflow](https://github.com/cynarax/bridge-by-ganado/issues/new?template=workflow.yml). First-task reports are optional. Do not publish private paths, codes, credentials or customer logs. For security issues, email **info@ganado.cz** privately with the subject **Bridge security report**.
 
 [Contributing](CONTRIBUTING.md) · [Roadmap](ROADMAP.md) · [Changelog](CHANGELOG.md) · [MIT licence](LICENSE)
+
+---
+
+**More from the same builder:** [Ganado Faktura](https://reliabilitylayer.com/work/faktura), a public invoicing application · [Sable](https://reliabilitylayer.com/work/sable), an in-house macOS reporting tool · [Product portfolio](https://reliabilitylayer.com) · [GitHub profile](https://github.com/cynarax).
